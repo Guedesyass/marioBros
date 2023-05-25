@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(#42c431, #532e0f);
+}
+
+.game-board{
+    width: 100%;
+    height: 500px;
+    border-bottom: 15px solid rgb(26, 196, 26);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #E6F6FF);
+
+}
+
+.pipe{
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    right: -80px;
+    animation: pipe-animation 1.5s infinite linear;
+}
+
+@keyframes pipe-animation {
+    from{
+        right: 0;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+.jump{
+    animation: jump 800ms ease-out;
+}
+
+@keyframes jump {
+    0% {
+       bottom: 0; 
+    }
+
+    40%{
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    60%{
+        bottom: 180px;
+    }
+
+    100%{
+        bottom: 0;
+    }
+}
+
+.clouds {
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 20s infinite linear;
+
+}
+
+@keyframes clouds-animation {
+    from{
+        right: -550px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+.game-over{
+    width: 100%;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.over {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mario-peace{
+    width: 115px;
+    position: absolute;
+    left: 35%;
+    bottom: 58%;
+}
+
+.btn {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.restart{
+    width: 30px;
+}
+
+.game-subtitle{
+    font-family: 'VT323', monospace;
+}
+
+.playing{
+    display: none;
+}
